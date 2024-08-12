@@ -20,7 +20,6 @@ public class FavouritesService {
     private static final Logger log = LoggerFactory.getLogger(FavouritesService.class);
     private FavouritesRepository favoriteRepository;
     private RecipeRepository recipeRepository;
-    private ChiefRepository chiefRepository;
 
     public boolean hasFavouritesRecipe(Long recipeId) {
         Chief chief = (Chief) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
