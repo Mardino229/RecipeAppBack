@@ -4,10 +4,7 @@ import com.nidas.recipesapp.Exception.EmailAlreadyExistsException;
 import com.nidas.recipesapp.dto.RecipeDtos;
 import com.nidas.recipesapp.model.Chief;
 import com.nidas.recipesapp.model.Recipe;
-import com.nidas.recipesapp.repository.ChiefRepository;
-import com.nidas.recipesapp.repository.FavouritesRepository;
-import com.nidas.recipesapp.repository.LikeRepository;
-import com.nidas.recipesapp.repository.RecipeRepository;
+import com.nidas.recipesapp.repository.*;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -87,8 +84,8 @@ public class RecipeService {
             if (imageFile.exists()) {
                 imageFile.delete();
             }
-            likeRepository.deleteAllByRecipe_Id(id);
-            favouritesRepository.deleteAllByRecipe_Id(id);
+            likeRepository.deleteByRecipe_Id(id);
+            favouritesRepository.deleteByRecipe_Id(id);
             recipeRepository.deleteById(id);
         } else{
             throw new EmailAlreadyExistsException("Operation Not Authorized");

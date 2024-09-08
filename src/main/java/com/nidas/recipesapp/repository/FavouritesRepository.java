@@ -13,4 +13,5 @@ public interface FavouritesRepository extends JpaRepository<Favourites, Long> {
     long countByChiefIdAndRecipeId(Long chiefId, Long recipeId);
     List<Favourites> findAllByChief(Chief chief);
     void deleteAllByRecipe_Id(Long id);
+    void deleteByRecipe_Id(Long id);
 }

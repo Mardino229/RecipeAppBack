@@ -15,9 +15,9 @@ public class WebConfig implements WebMvcConfigurer {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://mardino229.github.io") // Remplacez par l'URL de votre client
+                        .allowedOrigins("http://localhost:5174")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .allowCredentials(true); // Permettre l'envoi de cookies
+                        .allowCredentials(true);
             }
             @Override
             public void addResourceHandlers(ResourceHandlerRegistry registry) {

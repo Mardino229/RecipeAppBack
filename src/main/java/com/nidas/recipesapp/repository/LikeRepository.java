@@ -9,4 +9,5 @@ public interface LikeRepository extends JpaRepository<Likes, Long> {
         long countByChiefIdAndRecipeId(Long chiefId, Long recipeId);
         Likes findByChiefIdAndRecipeId(Long chiefId, Long recipeId);
         void deleteAllByRecipe_Id(Long id);
+        void deleteByRecipe_Id(Long id);
 }
